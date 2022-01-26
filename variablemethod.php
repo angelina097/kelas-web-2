@@ -2,22 +2,29 @@
 
 class ContohStatic
 {
-    public static $nama = "nama variable";
-
-    public static function all()
+  public static $nama = ["Rendi", "Retno", "Rezi"];
+  public static $index = 1; //variabel global
+  public static function all()
+  {
+   $index = 1; //variabel lokal
+   foreach(self::$nama as $na)
     {
-      echo "Ini Contoh Function Static";
+       echo $index++ .".".$na . "<br>";
     }
-}   
-    
-class SubStatic extends ContohStatic
+  }
+  public function display()
 
+  {
+    echo self::all();
+  }
+    
+}   
+class SubStatic extends ContohStatic   
 {
 
 }
 
 //inisialisasi object
-
 
 echo ContohStatic:: $nama;
 echo ContohStatic:: $nama;
